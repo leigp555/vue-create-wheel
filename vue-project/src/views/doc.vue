@@ -20,7 +20,7 @@
    </aside>
    <div class="gulu-content" >
      <div class="replace" v-if="menuVisible"></div>
-     <main  v-bind:class="menuVisible===true?'notFull':'full'">
+     <main>
        <router-view />
      </main>
    </div>
@@ -47,7 +47,6 @@ export default {
   position: relative;
 }
 aside{
-  text-wrap: none;
   width: 150px;
   height: 100%;
   padding: 16px 0;
@@ -81,6 +80,7 @@ aside{
     padding: 16px 0;
   }
   >main{
+    text-wrap: normal;
     flex-grow: 1;
     padding: 16px;
     background: white;
