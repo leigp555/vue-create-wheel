@@ -1,12 +1,8 @@
 <template>
  <div>
    <TopNav/>
-   <div class="gulu-topNave">
-     <div class="logo"></div>
-     <div class="menu"> </div>
-   </div>
    <div class="gulu-content">
-     <aside >
+     <aside v-if="menuVisible" >
        <h2>组件列表</h2>
        <ol>
          <li>
@@ -30,10 +26,18 @@
 
  </div>
 </template>
+
 <script lang="ts">
 import TopNav from '../components/Topnav.vue'
+import {inject, Ref} from "vue";
 export default {
-  components:{TopNav}
+  components:{TopNav},
+  setup(){
+    const menuVisible=inject<Ref<boolean>>("xxx")
+    console.log(menuVisible.value)
+    return {menuVisible}
+  }
+
 }
 </script>
 
