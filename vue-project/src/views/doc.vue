@@ -1,25 +1,26 @@
 <template>
- <div>
+ <div class="layout">
    <TopNav/>
-   <div class="gulu-content">
-     <aside v-if="menuVisible" >
-       <h2>组件列表</h2>
-       <ol>
-         <li>
-           <router-link to="/doc/switch">Switch 组件</router-link>
-         </li>
-         <li>
-           <router-link to="/doc/button">Button 组件</router-link>
-         </li>
-         <li>
-           <router-link to="/doc/dialog">Dialog 组件</router-link>
-         </li>
-         <li>
-           <router-link to="/doc/tabs">Tabs 组件</router-link>
-         </li>
-       </ol>
-     </aside>
-     <main>
+   <aside v-if="menuVisible" >
+     <h2>组件列表</h2>
+     <ol>
+       <li>
+         <router-link to="/doc/switch">Switch 组件</router-link>
+       </li>
+       <li>
+         <router-link to="/doc/button">Button 组件</router-link>
+       </li>
+       <li>
+         <router-link to="/doc/dialog">Dialog 组件</router-link>
+       </li>
+       <li>
+         <router-link to="/doc/tabs">Tabs 组件</router-link>
+       </li>
+     </ol>
+   </aside>
+   <div class="gulu-content" >
+     <div class="replace" v-if="menuVisible"></div>
+     <main  v-bind:class="menuVisible===true?'notFull':'full'">
        <router-view />
      </main>
    </div>
@@ -41,54 +42,49 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.layout {
-  display: flex;
-  flex-direction: column;
+.layout{
   height: 100vh;
-  > .nav {
-    flex-shrink: 0;
+  position: relative;
+}
+aside{
+  text-wrap: none;
+  width: 150px;
+  height: 100%;
+  padding: 16px 0;
+  background: lightblue;
+  position: fixed;
+  >h2 {
+    margin-bottom: 4px;
+    padding: 0 16px;
   }
-  > .gulu-content {
-    flex-grow: 1;
-    padding-top: 60px;
-    padding-left: 156px;
-    @media (max-width: 500px) {
-      padding-left: 0;
+  >ol {
+    >li {
+      >a {
+        display: block;
+        padding: 4px 16px;
+        text-decoration: none;
+      }
+      .router-link-active {
+        background: white;
+      }
     }
   }
 }
-.gulu-content {
+.gulu-content{
+  height: 100%;
+  margin-top: 60px;
   display: flex;
-  > aside {
+  >.replace{
+    width: 150px;
+    height: 100%;
     flex-shrink: 0;
+    padding: 16px 0;
   }
-  > main {
+  >main{
     flex-grow: 1;
     padding: 16px;
-    background: lightgreen;
+    background: white;
+    height: 100%;
   }
-}
-aside {
-  background: lightblue;
-  width: 150px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  padding: 70px 16px 16px;
-  height: 100%;
-  > h2 {
-    margin-bottom: 4px;
-  }
-  > ol {
-    > li {
-      padding: 4px 0;
-    }
-  }
-  @media(max-width: 500px){
-
-  }
-}
-main {
-  overflow: auto;
 }
 </style>
