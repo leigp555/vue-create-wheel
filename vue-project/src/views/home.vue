@@ -2,9 +2,9 @@
   <div>
     <TopNav />
     <div class="gulu-banner">
-      <h1>标题</h1>
-      <h2>介绍</h2>
-      <p class="action">
+      <h1>UI框架</h1>
+      <h2>介绍一个非常厉害的UI框架</h2>
+      <p class="actions">
         <a href="https://github.com">GitHub</a>
        <router-link to="/doc">开始</router-link>
       </p>
