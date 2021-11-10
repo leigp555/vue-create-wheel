@@ -34,7 +34,6 @@ export default {
   components:{TopNav},
   setup(){
     const menuVisible=inject<Ref<boolean>>("xxx")
-    console.log(menuVisible.value)
     return {menuVisible}
   }
 
@@ -84,6 +83,9 @@ aside {
     > li {
       padding: 4px 0;
     }
+  }
+  @media(max-width: 500px){
+
   }
 }
 main {
