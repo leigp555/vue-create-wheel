@@ -3,8 +3,6 @@
     <FirstExample v-model:value="bool"/>
   </div>
 </template>
-
-
 <script lang="ts">
 import FirstExample from '../lib/switch.vue'
 import {ref} from "vue";
