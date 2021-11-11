@@ -22,7 +22,22 @@
       <FirstExample size="normal" theme="text">text</FirstExample>
       <FirstExample size="small" theme="text">text</FirstExample>
     </div>
-
+    <div class="intro">不同等级</div>
+    <div class="example">
+      <FirstExample level="main">主要按钮</FirstExample>
+      <FirstExample>普通按钮</FirstExample>
+      <FirstExample level="danger">危险按钮</FirstExample>
+    </div>
+    <div class="example">
+      <FirstExample level="main" theme="link">主要按钮</FirstExample>
+      <FirstExample theme="link">普通按钮</FirstExample>
+      <FirstExample level="danger" theme="link">危险按钮</FirstExample>
+    </div>
+    <div class="example">
+      <FirstExample level="main" theme="text">主要按钮</FirstExample>
+      <FirstExample theme="text">普通按钮</FirstExample>
+      <FirstExample level="danger" theme="text">危险按钮</FirstExample>
+    </div>
   </div>
 </template>
 <script lang="ts">
@@ -38,7 +53,8 @@ export default {
   margin-top: 20px;
   font-size: 20px;
 }
-.example{
-  margin-bottom:10px
+
+.example {
+  margin-bottom: 10px
 }
 </style>
