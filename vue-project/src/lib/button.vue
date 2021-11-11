@@ -1,20 +1,46 @@
 <template>
-  <button v-bind="attrs" class="gulu-button" :class="`gulu-theme-${theme}`">
+  <button v-bind="attrs" class="gulu-button" :class="classes">
     <slot></slot>
   </button>
 </template>
 <script lang="ts">
+import {computed} from "vue";
+
 export default {
-  props:{
-    theme:{
-      type:String,
-      default:"button"
+  props: {
+    theme: {
+      type: String,
+      default: "button",
+    },
+    size: {
+      type: String,
+      default: "normal",
+    },
+    level: {
+      type: String,
+      default: "normal",
+    },
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
+    loading: {
+      type: Boolean,
+      default: false
     }
   },
   inheritAttrs:false,
   setup(props, context){
     const{attrs}=context
-    return {attrs}
+    const { theme, size, level } = props;
+    const classes=computed(()=>{
+      return {
+        [`gulu-theme-${theme}`]: theme,
+        [`gulu-size-${size}`]: size,
+        [`gulu-level-${level}`]: level,
+      };
+    })
+    return {attrs,classes}
   }
 }
 </script>
