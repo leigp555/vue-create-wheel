@@ -1,21 +1,30 @@
 <template>
   <div class="top-nav">
-    <div class="logo" @click="toggleMenu">LOGO</div>
+    <button class="toggleAside" @click="toggleMenu">
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-list"></use>
+      </svg>
+    </button>
+
+    <router-link to="/">
+      <div class="logo">LOGO</div>
+    </router-link>
+
     <ul class="menu">
       <li>菜单1</li>
       <li>菜单2</li>
     </ul>
-    <span class="toggleAside" @click="toggleMenu"></span>
   </div>
 </template>
+
 <script lang="ts">
 import {inject, Ref} from "vue";
 
 export default {
-  setup(){
-    const menuVisible=inject<Ref<boolean>>("xxx")
-    const toggleMenu=()=>{
-      menuVisible.value=!menuVisible.value
+  setup() {
+    const menuVisible = inject<Ref<boolean>>("xxx")
+    const toggleMenu = () => {
+      menuVisible.value = !menuVisible.value
     }
     return {toggleMenu}
   }
@@ -33,45 +42,57 @@ $color: #007974;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 20;
-  justify-content: center;
+  height: 50px;
+  justify-content: space-between;
   align-items: center;
-  >.logo {
-    max-width: 6em;
-    margin-right: auto;
-    >svg {
-      width: 32px;
-      height: 32px;
-    }
+  @media(max-width: 500px) {
+    justify-content: center;
   }
-  >.menu {
+
+  > .logo {
+    max-width: 6em;
+    margin: 0 auto;
+  }
+
+  > .menu {
     display: flex;
     white-space: nowrap;
     flex-wrap: nowrap;
-    >li {
+
+    > li {
       margin: 0 1em;
     }
   }
-  >.toggleAside {
-    width: 32px;
-    height: 32px;
-    position: absolute;
-    left: 16px;
-    top: 50%;
-    transform: translateY(-50%);
+
+  > .toggleAside {
     display: none;
-    background: fade-out(black, 0.9);
+    background-color: inherit;
+    border: none;
+    position: absolute;
+    top: 25px;
+    transform: translateY(-50%);
+    left: 20px;
+
+    > .icon {
+      width: 20px;
+      height: 20px;
+      vertical-align: -0.15em;
+      fill: currentColor;
+      overflow: hidden;
+    }
   }
+
   @media (max-width: 500px) {
-    >.menu {
+    > .menu {
       display: none;
     }
-    >.logo {
+    > .logo {
       margin: 0 auto;
     }
-    >.toggleAside {
+    > .toggleAside {
       display: inline-block;
     }
   }
 }
+
 </style>
