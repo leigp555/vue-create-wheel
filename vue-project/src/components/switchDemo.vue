@@ -11,7 +11,7 @@ import {ref} from "vue";
 export default {
   components:{FirstExample},
   setup(){
-    const bool= ref(true)
+    const bool= ref(false)
     return {bool}
   }
 
