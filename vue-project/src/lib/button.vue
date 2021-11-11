@@ -1,5 +1,6 @@
 <template>
-  <button v-bind="attrs" class="gulu-button" :class="classes">
+  <button v-bind="attrs" class="gulu-button" :class="classes" :disabled="disabled">
+    <span v-if="loading" class="gulu-loadingIndicator"></span>
     <slot></slot>
   </button>
 </template>
@@ -32,7 +33,7 @@ export default {
   inheritAttrs:false,
   setup(props, context){
     const{attrs}=context
-    const { theme, size, level } = props;
+    const { theme, size, level} = props;
     const classes=computed(()=>{
       return {
         [`gulu-theme-${theme}`]: theme,

@@ -38,6 +38,18 @@
       <FirstExample theme="text">普通按钮</FirstExample>
       <FirstExample level="danger" theme="text">危险按钮</FirstExample>
     </div>
+    <div class="intro">支持禁用</div>
+    <div>
+      <FirstExample :disabled="true">禁用按钮</FirstExample>
+      <FirstExample theme="link" disabled="true">禁用链接按钮</FirstExample>
+      <FirstExample theme="text" disabled="true">禁用文本按钮</FirstExample>
+    </div>
+    <div class="intro">支持加载中</div>
+    <div>
+      <FirstExample loading>加载中</FirstExample>
+      <FirstExample theme="link" loading>加载中</FirstExample>
+      <FirstExample theme="text" loading>加载中</FirstExample>
+    </div>
   </div>
 </template>
 <script lang="ts">
