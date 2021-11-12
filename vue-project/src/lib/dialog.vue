@@ -53,11 +53,8 @@ export default {
       }
     }
     const ok = () => {
-      const value=document.querySelector("input").value
-      if (props.ok?.() !== false&&value) {
+      if (props.ok?.() !== false) {
         close()
-      }else {
-        alert('填写内容不能为空')
       }
     }
     const cancel = () => {
