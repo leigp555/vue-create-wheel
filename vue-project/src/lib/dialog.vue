@@ -22,7 +22,7 @@
 </template>
 
 <script lang="ts">
-import Button from "./Button.vue";
+import Button from "./button.vue";
 export default {
   props: {
     visible: {
@@ -53,8 +53,11 @@ export default {
       }
     }
     const ok = () => {
-      if (props.ok?.() !== false) {
+      const value=document.querySelector("input").value
+      if (props.ok?.() !== false&&value) {
         close()
+      }else {
+        alert('填写内容不能为空')
       }
     }
     const cancel = () => {
@@ -111,6 +114,15 @@ $border-color: #d9d9d9;
 
   >main {
     padding: 12px 16px;
+    >input{
+      margin-top:20px;
+      padding: 8px 10px;
+      border: 2px solid orange;
+      border-radius: 4px;
+      &:focus{
+        outline: none;
+      }
+    }
   }
 
   >footer {
