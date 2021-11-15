@@ -102,7 +102,6 @@ aside {
     text-wrap: normal;
     flex-grow: 1;
     padding: 16px;
-    background: yellow;
     height: 100%;
   }
 

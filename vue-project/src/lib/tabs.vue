@@ -29,12 +29,10 @@ export default {
     selected: {type: String}
   },
   setup(props, context) {
-    const selectedItem=ref<HTMLDivElement>(null)
+    const selectedItem=ref(null)
     const indicator=ref<HTMLDivElement>(null)
     const container=ref<HTMLDivElement>(null)
     const defaults = context.slots.default()
-    const totalLeft=ref<number>(0)
-
     defaults.forEach((item) => {
       if (item.type !== Tab) {
         throw new Error("子组件类型必须是Tab")
@@ -56,9 +54,9 @@ export default {
       watchEffect(()=>{
           const {width,left:left1}=selectedItem.value.getBoundingClientRect()
           const {left:left2}=container.value.getBoundingClientRect()
-          totalLeft.value=left1-left2
+          const totalLeft=left1-left2
           indicator.value.style.width=width +"px"
-          indicator.value.style.left=totalLeft.value+'px'
+          indicator.value.style.left=totalLeft+'px'
       })
     })
     return {defaults, titles,content,toggle,container,indicator,selectedItem}
