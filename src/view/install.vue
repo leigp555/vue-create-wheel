@@ -1,3 +1,3 @@
 <template>
-  install
+  <div> install</div>
 </template>
