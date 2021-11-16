@@ -125,9 +125,11 @@ export default {
       }
       >ol>li{
         height: 1.9em;
-        & :hover{
-          text-decoration: none;
+        & :focus{
           color: #42b983;
+        }
+        >a:hover{
+          text-decoration: underline #42b983;
         }
       }
     }
