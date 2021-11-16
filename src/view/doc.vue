@@ -105,7 +105,7 @@ export default {
 
     .select {
       display: none;
-      @media(max-width: 400px) {
+      @media(max-width: 900px) {
         display: inline;
       }
     }
@@ -125,7 +125,7 @@ export default {
       border-right: 2px solid #ffe3b7;
       width: 200px;
       background-color: #fffdf1;
-      @media(max-width: 400px) {
+      @media(max-width: 900px) {
         display: none;
       }
 
@@ -152,23 +152,25 @@ export default {
       > .left {
         flex-shrink: 0;
         width: 200px;
-        @media(max-width: 400px) {
+        @media(max-width: 900px) {
           display: none;
         }
       }
 
       > .content {
         width: 100%;
-        @media (max-width: 400px) {
+        @media (max-width: 900px) {
           padding: 20px;
         }
         > .main-content {
           border: 1px solid red;
           max-width: 870px;
-          min-width: 500px;
           margin-top: 50px;
           margin-left: 10vw;
           margin-right: 10vw;
+          @media (max-width:500px) {
+            margin: 0;
+          }
         }
       }
     }
