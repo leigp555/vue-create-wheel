@@ -12,7 +12,7 @@
             <use xlink:href="#icon-logo"></use>
           </svg>
         </router-link>
-        </div>
+      </div>
       <div class="gitHub">
         <a href="https://github.com">
           <svg class="icon" aria-hidden="true">
@@ -52,9 +52,11 @@
         </ol>
       </aside>
       <main class="gulu-doc-main">
-        <div class="left"  ></div>
+        <div class="left"></div>
         <div class="content">
-         <router-view/>
+          <div class="main-content">
+            <router-view/>
+          </div>
         </div>
       </main>
     </div>
@@ -62,25 +64,27 @@
 </template>
 <script lang="ts">
 import {ref} from 'vue'
+
 export default {
-  setup(){
-    const visible=ref(false)
-    const toggle=()=>{
-      visible.value=!visible.value
+  setup() {
+    const visible = ref(false)
+    const toggle = () => {
+      visible.value = !visible.value
     }
-    const onClick=(e)=>{
-      const t=e.target
-     if(t.tagName.toLowerCase()==='a'){        //事件委托
-       toggle()
-     }
+    const onClick = (e) => {
+      const t = e.target
+      if (t.tagName.toLowerCase() === 'a') {        //事件委托
+        toggle()
+      }
     }
-    return {visible,toggle,onClick}
+    return {visible, toggle, onClick}
   }
 }
 </script>
 <style lang="scss" scoped>
 .gulu-doc {
   position: relative;
+
   > nav {
     background-color: #fffdf1;
     padding: 14px 20px;
@@ -90,13 +94,15 @@ export default {
     top: 0;
     left: 0;
     z-index: 1;
-    border-bottom:1px solid #ffe3b7;
-    box-shadow: 0 5px 5px  #ffe3b7;
+    border-bottom: 1px solid #ffe3b7;
+    box-shadow: 0 5px 5px #ffe3b7;
     justify-content: space-between;
-    >.gitHub>a>svg{
+
+    > .gitHub > a > svg {
       height: 24px;
       width: 30px;
     }
+
     .select {
       display: none;
       @media(max-width: 400px) {
@@ -104,10 +110,12 @@ export default {
       }
     }
   }
-  >.container{
+
+  > .container {
     position: relative;
     margin-top: 60px;
-    >.gulu-doc-aside{
+
+    > .gulu-doc-aside {
       position: fixed;
       top: 62px;
       left: 0;
@@ -116,40 +124,59 @@ export default {
       padding: 20px;
       border-right: 2px solid #ffe3b7;
       width: 200px;
-      background-color:#fffdf1 ;
+      background-color: #fffdf1;
       @media(max-width: 400px) {
         display: none;
       }
-      &.listVisible{
+
+      &.listVisible {
         display: block;
       }
-      >ol>li{
+
+      > ol > li {
         height: 1.9em;
-        & :focus{
+
+        & :focus {
           color: #42b983;
         }
-        >a:hover{
+
+        > a:hover {
           text-decoration: underline #42b983;
         }
       }
     }
-    >main{
+
+    > main {
       display: flex;
-      >.left{
+
+      > .left {
         flex-shrink: 0;
         width: 200px;
         @media(max-width: 400px) {
           display: none;
         }
       }
-      >.content{
-        padding: 20px;
+
+      > .content {
         width: 100%;
+        @media (max-width: 400px) {
+          padding: 20px;
+        }
+        > .main-content {
+          border: 1px solid red;
+          max-width: 870px;
+          min-width: 500px;
+          margin-top: 50px;
+          margin-left: 10vw;
+          margin-right: 10vw;
+        }
       }
     }
   }
+
   .icon {
-    width: 30px; height: 24px;
+    width: 30px;
+    height: 24px;
     vertical-align: -0.15em;
     fill: currentColor;
     overflow: hidden;
