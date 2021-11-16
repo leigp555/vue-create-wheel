@@ -91,6 +91,7 @@ export default {
     left: 0;
     z-index: 1;
     border-bottom:1px solid #ffe3b7;
+    box-shadow: 0 5px 5px  #ffe3b7;
     justify-content: space-between;
     >.gitHub>a>svg{
       height: 24px;
@@ -108,13 +109,12 @@ export default {
     margin-top: 60px;
     >.gulu-doc-aside{
       position: fixed;
-      top: 56px;
+      top: 62px;
       left: 0;
       z-index: 10;
       height: 100%;
       padding: 20px;
       border-right: 2px solid #ffe3b7;
-      border-top: 1px solid #ffe3b7;
       width: 200px;
       background-color:#fffdf1 ;
       @media(max-width: 400px) {

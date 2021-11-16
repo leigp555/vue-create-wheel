@@ -132,7 +132,7 @@ $color: #ffe3b7;
     }
   }
   .icon {
-    width: 30px; height: 24px;
+    width: 40px; height: 34px;
     vertical-align: -0.15em;
     fill: currentColor;
     overflow: hidden;
