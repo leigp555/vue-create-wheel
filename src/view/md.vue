@@ -26,8 +26,6 @@ export default {
 .markdown-body {
   background-color: #fffdf1;
   padding: 20px;
-
-  > code {
-  }
+  font-size: 18px;
 }
 </style>

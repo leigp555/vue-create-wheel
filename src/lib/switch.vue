@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button class="gulu-switch" @click="toggle" :class="{'gulu-checked':value}">
+    <button class="gulu-switch" @click="toggle" :class="{'gulu-checked':value,'gulu-disabled':disabled}">
       <span></span>
     </button>
   </div>
@@ -9,12 +9,18 @@
 export default {
   props: {
     value: Boolean,
+    disabled: {
+      type: Boolean,
+      default: false
+    }
   },
+
   setup(props, context) {
     const toggle = () => {
-      context.emit("update:value", !props.value);
+      if (!props.disabled)
+        context.emit("update:value", !props.value);
     };
-    return { toggle };
+    return {toggle};
   }
 };
 </script>
@@ -28,7 +34,9 @@ $h2: $h - 4px;
   background: #bfbfbf;
   border-radius: $h/2;
   position: relative;
-
+  &.gulu-disabled{
+    cursor: not-allowed;
+  }
   > span {
     position: absolute;
     top: 2px;
@@ -39,15 +47,30 @@ $h2: $h - 4px;
     border-radius: $h2 / 2;
     transition: all 250ms;
   }
-  &.gulu-checked { background: #1890ff;
-    > span { left: calc(100% - #{$h2} - 2px); }
+
+  &.gulu-checked {
+    background: #1890ff;
+
+    > span {
+      left: calc(100% - #{$h2} - 2px);
+    }
   }
-  &:focus { outline: none; }
+
+  &:focus {
+    outline: none;
+  }
+
   &:active {
-    > span { width: $h2 + 4px; }
+    > span {
+      width: $h2 + 4px;
+    }
   }
+
   &.gulu-checked:active {
-    > span { width: $h2 + 4px; margin-left: -4px; }
+    > span {
+      width: $h2 + 4px;
+      margin-left: -4px;
+    }
   }
 }
 </style>
