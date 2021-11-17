@@ -1,22 +1,10 @@
 <template>
-  <article class="markdown-body" v-html="Install">
-  </article>
+  <Md path="../markdown/install.md" />
 </template>
+
 <script lang="js">
-import Install from "../markdown/install.md"
+import Md from './md.vue'
 export default {
-  setup(){
-    return {Install}
-  }
+  components:{Md},
 }
 </script>
-
-<style lang="scss" scoped>
-.markdown-body {
-  background-color: #fffdf1;
-  padding: 20px;
-
-  > code {
-  }
-}
-</style>

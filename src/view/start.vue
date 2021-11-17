@@ -1,20 +1,10 @@
 <template>
-  <article class="markdown-body" v-html="Start">
-  </article>
+  <Md path="../markdown/get-started.md" />
 </template>
-<script>
-import Start from "../markdown/get-started.md"
+
+<script lang="js">
+import Md from './md.vue'
 export default {
-  setup(){
-    return {Start}
-  }
+  components:{Md},
 }
 </script>
-
-
-<style lang="scss" scoped>
-.markdown-body {
-  background-color: #fffdf1;
-  padding: 20px;
-}
-</style>
