@@ -1,5 +1,5 @@
 <demo>
-示例一
+示例二
 </demo>
 <template>
   <div>

@@ -4,13 +4,13 @@
     <h3><strong>常规用法</strong></h3>
     <Switch v-model:value="bool"/>
     <button >复制下面代码</button>
-    <pre v-text="FirstExample.__sourceCode"></pre>
+    <pre class="language-html" v-html="Prism.highlight(FirstExample.__sourceCode, Prism.languages.html, 'html')"></pre>
   </div>
   <div class="eg">
     <h3><strong>支持disabled</strong></h3>
     <Switch disabled/>
     <button>复制下面代码</button>
-    <pre class="language-html" v-html="Prism.highlight(FirstExample.__sourceCode, Prism.languages.html, 'html')"></pre>
+    <pre class="language-html" v-html="Prism.highlight(SecondExample.__sourceCode, Prism.languages.html, 'html')"></pre>
   </div>
 </template>
 <script lang="ts">
@@ -19,7 +19,7 @@ import FirstExample from "./example/eg1-switch.vue"
 import SecondExample from "./example/eg2-switch.vue"
 import {ref} from "vue";
 import 'prismjs';
-import 'prismjs/themes/prism.css'
+import './prismjs.css'
 const Prism=(window as any).Prism
 export default {
   components:{Switch},
