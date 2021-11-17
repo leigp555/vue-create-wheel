@@ -26,7 +26,7 @@
         <h2>文档</h2>
         <ol>
           <li>
-            <router-link to="/doc/intro">介绍</router-link>
+            <router-link to="/doc/intro" >介绍</router-link>
           </li>
           <li>
             <router-link to="/doc/install">安装</router-link>
@@ -64,15 +64,15 @@
 </template>
 <script lang="ts">
 import {ref} from 'vue'
-
 export default {
   setup() {
-    const visible = ref(false)
+    const visible = ref<Boolean>(false)
     const toggle = () => {
       visible.value = !visible.value
     }
-    const onClick = (e) => {
+    let onClick = (e) => {
       const t = e.target
+      // t.style.color="#42b983"
       if (t.tagName.toLowerCase() === 'a') {        //事件委托
         toggle()
       }
@@ -135,13 +135,12 @@ export default {
 
       > ol > li {
         height: 1.9em;
-
-        & :focus {
+        & :focus{
           color: #42b983;
         }
-
         > a:hover {
           text-decoration: underline #42b983;
+          color: #42b983;
         }
       }
     }
@@ -163,7 +162,6 @@ export default {
           padding: 20px;
         }
         > .main-content {
-          border: 1px solid red;
           max-width: 870px;
           margin-top: 50px;
           margin-left: 10vw;
