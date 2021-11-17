@@ -10,7 +10,7 @@
     <h3><strong>支持disabled</strong></h3>
     <Switch disabled/>
     <button>复制下面代码</button>
-    <pre v-text="SecondExample.__sourceCode"></pre>
+    <pre class="language-html" v-html="Prism.highlight(FirstExample.__sourceCode, Prism.languages.html, 'html')"></pre>
   </div>
 </template>
 <script lang="ts">
@@ -18,11 +18,16 @@ import Switch from '../lib/switch.vue'
 import FirstExample from "./example/eg1-switch.vue"
 import SecondExample from "./example/eg2-switch.vue"
 import {ref} from "vue";
+import 'prismjs';
+import 'prismjs/themes/prism.css'
+const Prism=(window as any).Prism
 export default {
   components:{Switch},
   setup(){
     const bool= ref<Boolean>(false)
-    return {bool,FirstExample,SecondExample}
+    console.log(Prism)
+    return {bool,FirstExample,SecondExample,Prism}
+
   }
 
 }
