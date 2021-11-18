@@ -46,7 +46,7 @@ export default {
 }
 </script>
 <style lang="scss">
-$h: 32px;
+$h: 28px;
 $border-color: #d9d9d9;
 $color: #333;
 $blue: #40a9ff;
@@ -56,7 +56,7 @@ $grey: grey;
 .gulu-button {
   box-sizing: border-box;
   height: $h;
-  padding: 0 12px;
+  padding: 0 10px;
   cursor: pointer;
   display: inline-flex;
   justify-content: center;
@@ -104,6 +104,16 @@ $grey: grey;
     font-size: 24px;
     height: 48px;
     padding: 0 16px;
+  }
+  &.gulu-size-normal {
+    font-size: 18px;
+    height: 36px;
+    padding: 0 14px;
+    @media(max-width: 500px) {
+      height: 32px;
+      padding: 0 10px;
+      font-size: 14px;
+    }
   }
   &.gulu-size-small {
     font-size: 12px;
