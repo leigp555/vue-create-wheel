@@ -102,7 +102,7 @@ $grey: grey;
   }
   &.gulu-size-big {
     font-size: 24px;
-    height: 48px;
+    height: 40px;
     padding: 0 16px;
   }
   &.gulu-size-normal {
@@ -116,7 +116,7 @@ $grey: grey;
     }
   }
   &.gulu-size-small {
-    font-size: 12px;
+    font-size: 2px;
     height: 20px;
     padding: 0 4px;
   }
