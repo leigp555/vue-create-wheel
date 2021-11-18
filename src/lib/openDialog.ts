@@ -19,7 +19,7 @@ export const openDialog = (options) => {
                         close();
                     }
                 },
-                ok, cancel, closeOnClickOverlay: closeOnClickOverlay.value
+                ok, cancel, closeOnClickOverlay: closeOnClickOverlay
             },
             {
                 title,
