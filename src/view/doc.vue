@@ -76,7 +76,6 @@ export default {
     }
     let onClick = (e) => {
       const t = e.target
-      // t.style.color="#42b983"
       if (t.tagName.toLowerCase() === 'a') {        //事件委托
         toggle()
       }
@@ -136,8 +135,8 @@ export default {
 
       &.listVisible {
         display: block;
-      }
 
+      }
       > ol > li {
         height: 1.9em;
 
