@@ -2,24 +2,27 @@
   <div class="eg">
     <h3><strong>{{ title }}</strong></h3>
     <component :is="component"/>
-    <button @click="toggle">代码展示</button>
+    <Button v-if="!visible" @click="toggle">显示代码</button>
+    <Button v-if="visible" @click="toggle">隐藏代码</button>
+    <Button @click="copy">复制代码</button>
     <pre v-if="visible" class="language-html" v-html="html"></pre>
   </div>
 </template>
 
 
 <script lang="ts">
+import Button from "../lib/button.vue"
 import 'prismjs';
 import './prismjs.css'
-
 const Prism = (window as any).Prism
 import {computed, ref} from "vue";
-
+import {openPopUp} from "../lib/openPopUp";
 export default {
   props: {
     title: String,
     component: Object,
   },
+  components:{Button},
   setup(props) {
     const title = props.title
     const component = props.component
@@ -30,7 +33,12 @@ export default {
     const toggle = () => {
       visible.value = !visible.value
     }
-    return {html, title, component, toggle, visible}
+    const copy=()=>{
+      openPopUp({title: "成功复制"})
+      console.log("ok")
+      navigator.clipboard.writeText(props.component.__sourceCode);
+    }
+    return {html, title, component, toggle, visible,copy}
   }
 }
 </script>

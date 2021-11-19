@@ -2,7 +2,6 @@
 快速引用
 </demo>
 <template>
-  <h3>快速引用</h3>
   <div>
     <Button @click="showDialog" level="main">点击演示</Button>
   </div>

@@ -1,7 +1,7 @@
 <template>
   <div>
     <DialogExample :component="FirstExample" title="示例一"></DialogExample>
-    <DialogExample :component="SecondExample"></DialogExample>
+    <DialogExample :component="SecondExample" title="示例二"></DialogExample>
   </div>
 </template>
 

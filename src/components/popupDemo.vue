@@ -1,39 +1,40 @@
 <template>
   <div class="eg">
-    <h3><strong>Tabs组件示例:</strong></h3>
+    <h3><strong>Popup组件示例:</strong></h3>
     <div class="example">
-      <TabsExample/>
+      <PopUp/>
     </div>
-    <Button v-if="!visible" class="button" @click="codeVisible">显示代码</Button>
     <Button v-if="visible" class="button" @click="codeVisible">隐藏代码</Button>
+    <Button v-if="!visible" class="button" @click="codeVisible">显示代码</Button>
     <Button class="button" @click="toggle">复制代码</Button>
     <pre v-if="visible" class="language-html" v-html="html"></pre>
   </div>
 </template>
 
 <script lang="ts">
-import TabsExample from "./example/eg1-tab.vue"
 import Button from "../lib/button.vue"
+import PopUp from "./popUpExample.vue"
 import {openPopUp} from "../lib/openPopUp";
 import 'prismjs';
 import './prismjs.css'
 import {computed, ref} from "vue";
+
 const Prism = (window as any).Prism
 export default {
-  components: {TabsExample, Button},
+  components: {PopUp, Button},
   setup() {
     const visible = ref<Boolean>(true)
+    const codeVisible=()=>{
+       visible.value=!visible.value
+    }
     const toggle = () => {
       openPopUp({title: "成功复制"})
-      navigator.clipboard.writeText(TabsExample.__sourceCode);
-    }
-    const codeVisible=()=>{
-      visible.value = !visible.value
+      navigator.clipboard.writeText(PopUp.__sourceCode);
     }
     const html = computed(() => {
-      return Prism.highlight(TabsExample.__sourceCode, Prism.languages.html, 'html')
+      return Prism.highlight(PopUp.__sourceCode, Prism.languages.html, 'html')
     })
-    return {TabsExample, html, visible, toggle,codeVisible}
+    return {html, visible, toggle,codeVisible}
   }
 }
 </script>
@@ -53,21 +54,22 @@ export default {
     padding: 20px;
     box-shadow: 0 0 2px 2px #d9d9d9;
   }
-  > button {
+  > .button {
+    margin-bottom: 15px;
     margin-top: 20px;
-    margin-bottom: 10px;
     padding: 10px 15px;
     background-color: black;
     color: white;
     border-radius: 8px;
+    font-size: 16px;
     border: none;
     @media(max-width: 500px) {
       height: 32px;
       padding: 0 10px;
       font-size: 14px;
     }
-  }
 
+  }
 
   > pre {
     background-color: #f8f8f8;

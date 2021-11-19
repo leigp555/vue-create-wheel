@@ -5,6 +5,7 @@ import SwitchDemo from'./components/switchDemo.vue'
 import ButtonDemo from'./components/buttonDemo.vue'
 import DialogDemo from'./components/dialogDemo.vue'
 import TabDemo from'./components/tabDemo.vue'
+import PopUp from "./components/popupDemo.vue"
 import {h} from "vue";
 import Markdown from './view/md.vue'
 const render=(path)=>{
@@ -24,6 +25,7 @@ export const router = createRouter({
                 {path:'button',component:ButtonDemo},
                 {path:'dialog',component:DialogDemo},
                 {path:'tabs',component:TabDemo},
+                {path:'popup',component:PopUp},
             ]}
     ]
 })
