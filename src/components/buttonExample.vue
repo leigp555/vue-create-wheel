@@ -2,8 +2,10 @@
   <div class="eg">
     <h3><strong>{{ title }}</strong></h3>
     <component :is="component"/>
-    <div class="button">
-      <button @click="toggle">代码展示</button>
+    <div class="function">
+      <Button class="button" v-if="!visible" @click="toggle">显示代码</Button>
+      <Button class="button" v-if="visible" @click="toggle">隐藏代码</Button>
+      <Button class="button" @click="copy">复制代码</Button>
     </div>
     <pre v-if="visible" class="language-html" v-html="html"></pre>
   </div>
@@ -15,7 +17,7 @@ import './prismjs.css'
 
 const Prism = (window as any).Prism
 import {computed, ref} from "vue";
-
+import {openPopUp} from "../lib/openPopUp";
 export default {
   components: {Button},
   props: {
@@ -33,7 +35,11 @@ export default {
     const toggle = () => {
       visible.value = !visible.value
     }
-    return {html, title, component, toggle, visible}
+    const copy=()=>{
+      openPopUp({title:"成功复制"})
+      navigator.clipboard.writeText(props.component.__sourceCode);
+    }
+    return {html, title, component, toggle, visible,copy}
   }
 }
 </script>
@@ -48,24 +54,19 @@ export default {
     margin-bottom: 20px;
   }
 
-  > .button {
+  > .function {
     margin-bottom: 15px;
     > button {
-      margin-top: 20px;
+      margin-top: 10px;
       margin-bottom: 10px;
-      padding:10px 15px;
+      padding: 10px 10px;
       background-color: black;
       color: white;
       border-radius: 8px;
       border: none;
-      @media(max-width: 500px) {
-        height: 32px;
-        padding: 0 10px;
-        font-size: 14px;
-      }
+      font-size: 14px;
     }
   }
-
   > pre {
     background-color: #f8f8f8;
     color: #52575c;

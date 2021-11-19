@@ -18,6 +18,7 @@ import {openPopUp} from "../lib/openPopUp";
 import 'prismjs';
 import './prismjs.css'
 import {computed, ref} from "vue";
+
 const Prism = (window as any).Prism
 export default {
   components: {TabsExample, Button},
@@ -27,13 +28,13 @@ export default {
       openPopUp({title: "成功复制"})
       navigator.clipboard.writeText(TabsExample.__sourceCode);
     }
-    const codeVisible=()=>{
+    const codeVisible = () => {
       visible.value = !visible.value
     }
     const html = computed(() => {
       return Prism.highlight(TabsExample.__sourceCode, Prism.languages.html, 'html')
     })
-    return {TabsExample, html, visible, toggle,codeVisible}
+    return {TabsExample, html, visible, toggle, codeVisible}
   }
 }
 </script>
@@ -53,21 +54,17 @@ export default {
     padding: 20px;
     box-shadow: 0 0 2px 2px #d9d9d9;
   }
+
   > button {
-    margin-top: 20px;
+    margin-top: 10px;
     margin-bottom: 10px;
-    padding: 10px 15px;
+    padding: 10px 10px;
     background-color: black;
     color: white;
     border-radius: 8px;
     border: none;
-    @media(max-width: 500px) {
-      height: 32px;
-      padding: 0 10px;
-      font-size: 14px;
-    }
+    font-size: 14px;
   }
-
 
   > pre {
     background-color: #f8f8f8;

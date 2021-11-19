@@ -55,16 +55,12 @@ export default {
   > button {
     margin-top: 10px;
     margin-bottom: 10px;
-    padding: 10px 15px;
+    padding: 10px 10px;
     background-color: black;
     color: white;
     border-radius: 8px;
     border: none;
-    @media(max-width: 500px) {
-      height: 32px;
-      padding: 0 10px;
-      font-size: 14px;
-    }
+    font-size: 14px;
   }
 
   > pre {

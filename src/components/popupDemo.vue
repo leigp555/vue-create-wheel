@@ -24,8 +24,8 @@ export default {
   components: {PopUp, Button},
   setup() {
     const visible = ref<Boolean>(true)
-    const codeVisible=()=>{
-       visible.value=!visible.value
+    const codeVisible = () => {
+      visible.value = !visible.value
     }
     const toggle = () => {
       openPopUp({title: "成功复制"})
@@ -34,7 +34,7 @@ export default {
     const html = computed(() => {
       return Prism.highlight(PopUp.__sourceCode, Prism.languages.html, 'html')
     })
-    return {html, visible, toggle,codeVisible}
+    return {html, visible, toggle, codeVisible}
   }
 }
 </script>
@@ -54,21 +54,16 @@ export default {
     padding: 20px;
     box-shadow: 0 0 2px 2px #d9d9d9;
   }
+
   > .button {
-    margin-bottom: 15px;
-    margin-top: 20px;
-    padding: 10px 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px 10px;
     background-color: black;
     color: white;
     border-radius: 8px;
-    font-size: 16px;
     border: none;
-    @media(max-width: 500px) {
-      height: 32px;
-      padding: 0 10px;
-      font-size: 14px;
-    }
-
+    font-size: 14px;
   }
 
   > pre {
