@@ -28,7 +28,10 @@ export default {
       visible.value = !visible.value
     }
     const toggle = () => {
-      openPopUp({title: "成功复制"})
+      openPopUp({
+        title: "成功复制",
+        style:{top:"35vh",right:"10vw"}
+      })
       navigator.clipboard.writeText(PopUp.__sourceCode);
     }
     const html = computed(() => {

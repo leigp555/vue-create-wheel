@@ -25,7 +25,7 @@ export default {
   setup() {
     const visible = ref<Boolean>(true)
     const toggle = () => {
-      openPopUp({title: "成功复制"})
+      openPopUp({title: "成功复制",style:{top:"35vh",right:"10vw"}})
       navigator.clipboard.writeText(TabsExample.__sourceCode);
     }
     const codeVisible = () => {

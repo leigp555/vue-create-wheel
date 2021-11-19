@@ -2,7 +2,7 @@ import {createApp, h} from "vue";
 import OpenPopUp from "./popUp.vue"
 
 export const openPopUp = (options) => {
-    let {title, time, style} = options
+    let {title, style} = options
     const demo = document.createElement("div")
     document.body.appendChild(demo)
     const app = createApp(
@@ -12,5 +12,5 @@ export const openPopUp = (options) => {
     setTimeout(() => {
         app.unmount()
         demo.remove()
-    }, time || 1500)
+    },  2000)
 }

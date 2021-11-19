@@ -34,7 +34,7 @@ export default {
       visible.value = !visible.value
     }
     const copy=()=>{
-      openPopUp({title: "成功复制"})
+      openPopUp({title: "成功复制",style:{top:"35vh",right:"10vw"}})
       console.log("ok")
       navigator.clipboard.writeText(props.component.__sourceCode);
     }

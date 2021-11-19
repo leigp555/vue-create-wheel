@@ -26,7 +26,7 @@
         <h2>文档</h2>
         <ol>
           <li>
-            <router-link to="/doc/intro" >介绍</router-link>
+            <router-link to="/doc/intro">介绍</router-link>
           </li>
           <li>
             <router-link to="/doc/install">安装</router-link>
@@ -67,6 +67,7 @@
 </template>
 <script lang="ts">
 import {ref} from 'vue'
+
 export default {
   setup() {
     const visible = ref<Boolean>(false)
@@ -130,6 +131,7 @@ export default {
       background-color: #fffdf1;
       @media(max-width: 900px) {
         display: none;
+        animation: action 110ms;
       }
 
       &.listVisible {
@@ -138,9 +140,11 @@ export default {
 
       > ol > li {
         height: 1.9em;
-        & :focus{
+
+        & :focus {
           color: #42b983;
         }
+
         > a:hover {
           text-decoration: underline #42b983;
           color: #42b983;
@@ -164,12 +168,13 @@ export default {
         @media (max-width: 900px) {
           padding: 20px;
         }
+
         > .main-content {
           max-width: 870px;
           margin-top: 50px;
           margin-left: 10vw;
           margin-right: 10vw;
-          @media (max-width:500px) {
+          @media (max-width: 500px) {
             margin: 0;
           }
         }
@@ -185,5 +190,9 @@ export default {
     overflow: hidden;
   }
 }
-
+@keyframes action {
+  0%{transform:translateX(-150px)}
+  50%{transform:translateX(-75px)}
+  0%{transform:translateX(150)}
+}
 </style>
