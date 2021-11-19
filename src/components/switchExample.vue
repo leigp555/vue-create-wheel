@@ -53,8 +53,8 @@ export default {
   padding: 20px 20px 40px 20px;
   background-color: #ffffff;
   >.example{
-    padding: 20px;
-    box-shadow: 0 0 5px 2px #d9d9d9;
+    padding: 10px;
+    box-shadow: 0 0 1px 2px #d9d9d9;
     margin: 10px 0;
   }
   > p {

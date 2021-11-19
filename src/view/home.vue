@@ -162,6 +162,7 @@ $color: #ffe3b7;
         }
         >p{
           font-size: 20px;
+          font-family: "Microsoft Yahei UI", sans-serif;
         }
       }
     }
