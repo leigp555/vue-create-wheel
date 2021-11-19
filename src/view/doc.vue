@@ -71,12 +71,15 @@ import {ref} from 'vue'
 export default {
   setup() {
     const visible = ref<Boolean>(false)
+    const demo=ref<HTMLDivElement>(null)
     const toggle = () => {
       visible.value = !visible.value
     }
-    let onClick = (e) => {
+    const onClick = (e) => {
       const t = e.target
       if (t.tagName.toLowerCase() === 'a') {        //事件委托
+        demo.value=t
+        t.setAttribute("class","selected")
         toggle()
       }
     }
@@ -188,6 +191,9 @@ export default {
     fill: currentColor;
     overflow: hidden;
   }
+}
+.selected{
+  color: #42b983;
 }
 @keyframes action {
   0%{transform:translateX(-150px)}
