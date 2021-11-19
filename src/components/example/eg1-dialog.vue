@@ -17,7 +17,6 @@
     <!--ok,cancel可以选择性传值，默认返回值为true-->
   </div>
 </template>
-
 <script lang="ts">
 import Dialog from '../../lib/dialog.vue'
 import {ref} from "vue";

@@ -6,7 +6,6 @@
     <Switch v-model:value="bool"/>
   </div>
 </template>
-
 <script lang="ts">
 import Switch from '../../lib/switch.vue'
 import {ref} from "vue";

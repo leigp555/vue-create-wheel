@@ -9,7 +9,6 @@
 <script lang="ts">
 import {openDialog} from "../../lib/openDialog.ts"
 import Button from "../../lib/button.vue"
-
 export default {
   components: {Button},
   setup() {
