@@ -1,7 +1,9 @@
 <template>
   <div class="eg">
     <h3><strong>{{ title }}</strong></h3>
-    <component :is="component"/>
+    <div class="example">
+      <component :is="component"/>
+    </div>
     <div class="function">
       <Button class="button" v-if="!visible" @click="toggle">显示代码</Button>
       <Button class="button" v-if="visible" @click="toggle">隐藏代码</Button>
@@ -50,6 +52,11 @@ export default {
   margin-bottom: 50px;
   padding: 20px 20px 40px 20px;
   background-color: #ffffff;
+  >.example{
+    padding: 20px;
+    box-shadow: 0 0 5px 2px #d9d9d9;
+    margin: 10px 0;
+  }
   >h3{
     margin-bottom: 20px;
   }

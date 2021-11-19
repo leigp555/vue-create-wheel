@@ -2,13 +2,14 @@
 快速引用
 </demo>
 <template>
-  <div>
+  <div class="example">
     <Button @click="showDialog" level="main">点击演示</Button>
   </div>
 </template>
 <script lang="ts">
 import {openDialog} from "../../lib/openDialog.ts"
 import Button from "../../lib/button.vue"
+
 export default {
   components: {Button},
   setup() {
@@ -32,9 +33,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-h3{
-  margin-bottom: 15px;
-  font-size: 18px;
-  font-weight: bold;
+.example {
+  >button{
+    padding: 10px 10px;
+    border-radius: 8px;
+    font-size: 14px;
+  }
 }
 </style>

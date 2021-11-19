@@ -2,7 +2,7 @@
 示例一
 </demo>
 <template>
-  <div>
+  <div class="example">
     <Button @click="toggle" level="main">点击演示</Button>
     <Dialog v-model:visible="visible" :closeOnClickOverlay="false" :ok="ok" :cancel="cancel">
       <template v-slot:title>
@@ -40,3 +40,12 @@ export default {
   }
 }
 </script>
+<style lang="scss" scoped>
+.example {
+  >button{
+    padding: 10px 10px;
+    border-radius: 8px;
+    font-size: 14px;
+  }
+}
+</style>

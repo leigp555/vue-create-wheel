@@ -2,7 +2,7 @@
 示例
 </demo>
 <template>
-  <Button @click="toggle">点击展示</Button>
+  <Button @click="toggle" level="main">点击展示</Button>
 </template>
 <script lang="ts">
 import {openPopUp} from "../lib/openPopUp";
