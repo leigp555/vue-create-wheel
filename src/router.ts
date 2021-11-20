@@ -8,8 +8,15 @@ import TabDemo from'./components/tabDemo.vue'
 import PopUp from "./components/popupDemo.vue"
 import {h} from "vue";
 import Markdown from './view/md.vue'
-const render=(path)=>{
-    return h(Markdown,{path:`../markdown/${path}`,key:path})
+
+// @ts-ignore
+import introMd from './markdown/intro.md'
+// @ts-ignore
+import installMd from './markdown/install.md'
+// @ts-ignore
+import getStartedMd from './markdown/get-started.md'
+const render=(string)=>{
+    return h(Markdown,{content:string,key:string})
 }
 const history = createWebHashHistory()
 export const router = createRouter({
@@ -17,10 +24,10 @@ export const router = createRouter({
     routes: [
         {path: '/', component: Home},
         {path: '/doc', component: Doc,children:[
-                {path:'',component:render("intro.md")},
-                {path:'intro',component:render("intro.md")},
-                {path:'install',component:render("install.md")},
-                {path:'get-started',component:render("get-started.md")},
+                {path:'',component:render(introMd)},
+                {path:'intro',component:render(introMd)},
+                {path:'install',component:render(installMd)},
+                {path:'get-started',component:render(getStartedMd)},
                 {path:'switch',component:SwitchDemo},
                 {path:'button',component:ButtonDemo},
                 {path:'dialog',component:DialogDemo},
