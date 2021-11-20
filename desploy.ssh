@@ -1,5 +1,0 @@
-cd .. &&
-rm -rf dist &&
-yarn build &&
-cd dist || exit
-

@@ -71,15 +71,15 @@ import {ref} from 'vue'
 export default {
   setup() {
     const visible = ref<Boolean>(false)
-    const demo=ref<HTMLDivElement>(null)
+    const demo = ref<HTMLDivElement>(null)
     const toggle = () => {
       visible.value = !visible.value
     }
     const onClick = (e) => {
       const t = e.target
       if (t.tagName.toLowerCase() === 'a') {        //事件委托
-        demo.value=t
-        t.setAttribute("class","selected")
+        demo.value = t
+        t.setAttribute("class", "selected")
         toggle()
       }
     }
@@ -99,7 +99,7 @@ export default {
     width: 100%;
     top: 0;
     left: 0;
-    z-index: 1;
+    z-index: 10;
     border-bottom: 1px solid #ffe3b7;
     box-shadow: 0 5px 5px #ffe3b7;
     justify-content: space-between;
@@ -123,33 +123,28 @@ export default {
 
     > .gulu-doc-aside {
       position: fixed;
-      top: 62px;
+      top: 58px;
       left: 0;
-      z-index: 10;
+      z-index: 1;
       height: 100%;
       padding: 20px;
       border-right: 2px solid #ffe3b7;
       width: 200px;
       background-color: #fffdf1;
+      transition: all 250ms ease;
       @media(max-width: 900px) {
-        display: none;
-        animation: action 200ms linear;
+        left: -200px;
+        &.listVisible {
+          -webkit-transform: translateX(200px);
+        }
       }
 
-      &.listVisible {
-        display: block;
-
-      }
       > ol > li {
         height: 1.9em;
 
-        & :focus {
-          color: #42b983;
-        }
-
         > a:hover {
           text-decoration: underline #42b983;
-          color: #42b983;
+
         }
       }
     }
@@ -192,12 +187,7 @@ export default {
     overflow: hidden;
   }
 }
-.selected{
+.selected {
   color: #42b983;
-}
-@-webkit-keyframes action {
-  0%{transform:translateX(-200px)}
-  50%{transform:translateX(-100px)}
-  100%{transform:translateX(0px)}
 }
 </style>

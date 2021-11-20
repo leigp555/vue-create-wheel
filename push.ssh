@@ -1,3 +1,7 @@
+cd .. &&
+rm -rf dist &&
+yarn build &&
+cd dist || exit
 git init &&
 git add . &&
 git commit -m "部署" &&

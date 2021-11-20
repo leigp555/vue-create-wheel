@@ -45,7 +45,7 @@ $h2: $h - 4px;
     width: $h2;
     background: white;
     border-radius: $h2 / 2;
-    transition: all 250ms;
+    -webkit-transition: all 250ms;
   }
 
   &.gulu-checked {
