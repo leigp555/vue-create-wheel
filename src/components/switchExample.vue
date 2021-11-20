@@ -14,7 +14,7 @@
 import Switch from '../lib/switch.vue'
 import Button from "../lib/button.vue"
 import 'prismjs';
-import './prismjs.css'
+import './prismjs.scss'
 
 const Prism = (window as any).Prism
 import {computed, ref} from "vue";

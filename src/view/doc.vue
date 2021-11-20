@@ -133,7 +133,7 @@ export default {
       background-color: #fffdf1;
       @media(max-width: 900px) {
         display: none;
-        animation: action 110ms;
+        animation: action 200ms linear;
       }
 
       &.listVisible {
@@ -196,8 +196,8 @@ export default {
   color: #42b983;
 }
 @keyframes action {
-  0%{transform:translateX(-150px)}
-  50%{transform:translateX(-75px)}
-  0%{transform:translateX(150)}
+  0%{transform:translateX(-200px)}
+  50%{transform:translateX(-100px)}
+  100%{transform:translateX(0px)}
 }
 </style>

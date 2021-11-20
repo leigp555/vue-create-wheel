@@ -16,7 +16,7 @@ import TabsExample from "./example/eg1-tab.vue"
 import Button from "../lib/button.vue"
 import {openPopUp} from "../lib/openPopUp";
 import 'prismjs';
-import './prismjs.css'
+import './prismjs.scss'
 import {computed, ref} from "vue";
 
 const Prism = (window as any).Prism
