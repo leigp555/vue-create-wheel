@@ -30,7 +30,7 @@ export default {
   animation: action 2.5s;
 }
 
-@keyframes action {
+@-webkit-keyframes action {
   0% {
     opacity: 0
   }

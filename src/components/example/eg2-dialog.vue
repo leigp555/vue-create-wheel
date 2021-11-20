@@ -7,14 +7,13 @@
   </div>
 </template>
 <script lang="ts">
-import {openDialog} from "../../lib/openDialog.ts"
+import {openDialog} from "../../lib/openDialog"
 import Button from "../../lib/button.vue"
 
 export default {
   components: {Button},
   setup() {
     const showDialog = () => {
-      console.log("执行了")
       openDialog({
         title: "标题",
         content: "内容",

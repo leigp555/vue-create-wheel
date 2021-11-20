@@ -195,7 +195,7 @@ export default {
 .selected{
   color: #42b983;
 }
-@keyframes action {
+@-webkit-keyframes action {
   0%{transform:translateX(-200px)}
   50%{transform:translateX(-100px)}
   100%{transform:translateX(0px)}
