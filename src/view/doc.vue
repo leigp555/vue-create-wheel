@@ -14,7 +14,7 @@
         </router-link>
       </div>
       <div class="gitHub">
-        <a href="https://github.com">
+        <a href="https://github.com/leigp555/wheel-UI.git">
           <svg class="icon" aria-hidden="true">
             <use xlink:href="#icon-github-fill"></use>
           </svg>

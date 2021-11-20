@@ -17,7 +17,7 @@
       <h1>Useful Component</h1>
       <h4>基于vue和TS开发的一套组件</h4>
       <div class="link">
-        <a href="https://github.com">
+        <a href="https://github.com/leigp555/wheel-UI.git">
           <button>gitHub</button>
         </a>
         <router-link to="/doc">
@@ -39,7 +39,7 @@
           </svg>
           <p>采用Typescript书写</p>
         </div>
-        <div class="into">
+        <div class="intro">
           <svg class="icon-feature" aria-hidden="true">
             <use xlink:href="#icon-easy"></use>
           </svg>
@@ -143,30 +143,31 @@ $color: #ffe3b7;
       justify-content: center;
       flex-wrap: wrap;
       @media (max-width: 400px) {
-        margin-top: 60px;
+        margin-top: 20px;
       }
-
       > div {
         background-color: $color;
         border-radius: 20px;
-        padding: 10px;
-        width: 200px;
+        padding: 10px 30px;
+        width: 300px;
         height: 200px;
         display: flex;
         gap: 10px;
-        flex-direction: column;
-        justify-content: center;
+        justify-content: start;
         align-items: center;
         @media (max-width: 400px) {
-          height: 110px;
+          height: 60px;
         }
-        >p{
+
+        > p {
           font-size: 20px;
+          white-space: nowrap;
           font-family: "Microsoft Yahei UI", sans-serif;
         }
       }
     }
   }
+
   .icon {
     width: 40px;
     height: 34px;
@@ -174,9 +175,16 @@ $color: #ffe3b7;
     fill: currentColor;
     overflow: hidden;
   }
-  .icon-feature{
+
+  .icon-feature {
     width: 80px;
     height: 80px;
+    @media(max-width: 400px) {
+      & {
+        width: 40px;
+        height: 34px;
+      }
+    }
   }
 }
 </style>
