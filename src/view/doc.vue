@@ -56,7 +56,7 @@
       </aside>
       <main class="gulu-doc-main">
         <div class="left"></div>
-        <div class="content">
+        <div class="content" @click="close">
           <div class="main-content">
             <router-view/>
           </div>
@@ -83,7 +83,10 @@ export default {
         toggle()
       }
     }
-    return {visible, toggle, onClick}
+    const close=()=>{
+      visible.value===true?visible.value = false:""
+    }
+    return {visible, toggle, onClick,close}
   }
 }
 </script>
@@ -162,6 +165,7 @@ export default {
 
       > .content {
         width: 100%;
+        height: 100%;
         @media (max-width: 900px) {
           padding: 20px;
         }
