@@ -137,14 +137,11 @@ $color: #ffe3b7;
 
   > footer {
     > .content {
-      margin-top: 80px;
+      margin-top: 20px;
       display: flex;
       gap: 5vw;
       justify-content: center;
       flex-wrap: wrap;
-      @media (max-width: 400px) {
-        margin-top: 20px;
-      }
       > div {
         background-color: $color;
         border-radius: 20px;
@@ -156,14 +153,21 @@ $color: #ffe3b7;
         justify-content: start;
         align-items: center;
         @media (max-width: 1100px) {
+          width: 30vh;
+          height: 120px;
           flex-direction: column;
           justify-content: center;
           align-items: center;
         }
-        @media (max-width: 500px) {
+        @media (max-width: 800px) {
+         margin: 0 100px;
+        }
+        @media (max-width: 600px) {
+          flex-direction: row;
           justify-content: start;
           align-items: center;
-          height: 60px;
+          height: 50px;
+          width: 300px;
         }
 
         > p {
@@ -186,7 +190,7 @@ $color: #ffe3b7;
   .icon-feature {
     width: 80px;
     height: 80px;
-    @media(max-width: 400px) {
+    @media(max-width: 600px) {
       & {
         width: 40px;
         height: 34px;
