@@ -67,7 +67,7 @@
 </template>
 <script lang="ts">
 import {ref} from 'vue'
-
+import {newDate} from "../components/closeAside.ts";
 export default {
   setup() {
     const visible = ref<Boolean>(false)
@@ -86,6 +86,12 @@ export default {
     const close=()=>{
       visible.value===true?visible.value = false:""
     }
+    //屏幕滑动距离大于100px就自动弹出边栏
+    document.body.addEventListener("touchmove",()=>{
+      if(newDate()&&newDate()>100){
+        visible.value=true
+      }
+    })
     return {visible, toggle, onClick,close}
   }
 }

@@ -155,7 +155,14 @@ $color: #ffe3b7;
         gap: 10px;
         justify-content: start;
         align-items: center;
-        @media (max-width: 400px) {
+        @media (max-width: 1100px) {
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+        @media (max-width: 500px) {
+          justify-content: start;
+          align-items: center;
           height: 60px;
         }
 
