@@ -11,9 +11,6 @@ export default {
       require: true
     }
   },
-  setup(props) {
-
-  }
 }
 </script>
 

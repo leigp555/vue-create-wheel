@@ -125,10 +125,18 @@ $color: #ffe3b7;
           font-size: 1.1em;
           background-color: #111111;
           white-space: nowrap;
-          height: 40px;
+          padding: 10px;
           width: 100px;
+          height: 48px;
           border-radius: 1em;
           border: none;
+          @media (max-width: 500px) {
+            width:80px;
+            height: 40px;
+            padding: 10px;
+            font-size: 14px;
+            border-radius: 12px;
+          }
         }
       }
     }

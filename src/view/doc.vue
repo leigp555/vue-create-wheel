@@ -88,7 +88,7 @@ export default {
     }
     //屏幕滑动距离大于100px就自动弹出边栏
     document.body.addEventListener("touchmove",()=>{
-      if(newDate()&&newDate()>100){
+      if(newDate()&&newDate()>80){
         visible.value=true
       }
     })
@@ -170,7 +170,7 @@ export default {
 
       > .content {
         width: 100%;
-        height: 100%;
+        min-height: 92vh;
         @media (max-width: 900px) {
           padding: 20px;
         }
