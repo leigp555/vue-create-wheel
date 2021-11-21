@@ -14,11 +14,11 @@
       </ol>
     </nav>
     <main class="gulu-homeContent">
-      <h1>Useful Component</h1>
+      <h1>Qmdv</h1>
       <h4>基于vue和TS开发的一套组件</h4>
       <div class="link">
         <a href="https://github.com/leigp555/wheel-UI.git">
-          <button>gitHub</button>
+          <button>GitHub</button>
         </a>
         <router-link to="/doc">
           <button>开始使用</button>
@@ -27,20 +27,20 @@
     </main>
     <footer class="gulu-homeFeature">
       <div class="content">
-        <div class="vue">
-          <svg class="icon-feature" aria-hidden="true">
+        <div>
+          <svg class="icon-feature" >
             <use xlink:href="#icon-Vue"></use>
           </svg>
           <p>基于Vue3开发</p>
         </div>
-        <div class="ts">
-          <svg class="icon-feature" aria-hidden="true">
+        <div>
+          <svg class="icon-feature" >
             <use xlink:href="#icon-typescript"></use>
           </svg>
           <p>采用Typescript书写</p>
         </div>
-        <div class="intro">
-          <svg class="icon-feature" aria-hidden="true">
+        <div >
+          <svg class="icon-feature" >
             <use xlink:href="#icon-easy"></use>
           </svg>
           <p>代码简单易懂</p>
@@ -74,6 +74,7 @@ $color: #ffe3b7;
       }
 
       > li {
+        font-size: 20px;
         > a {
           text-decoration: none;
 
@@ -93,7 +94,7 @@ $color: #ffe3b7;
   > main {
     background-color: $color;
     display: flex;
-    padding-top: 10vh;
+    padding-top: 8vh;
     flex-direction: column;
     align-items: center;
     gap: 2vh;
@@ -105,11 +106,8 @@ $color: #ffe3b7;
 
     > h1 {
       font-size: 48px;
-      @media (max-width: 400px) {
-        font-size: 2em;
-      }
     }
-
+    >h4{font-size: 18px;}
     > .link {
       display: flex;
       gap: 25px;
@@ -124,10 +122,11 @@ $color: #ffe3b7;
 
         > button {
           color: #fafafa;
+          font-size: 1.1em;
           background-color: #111111;
           white-space: nowrap;
-          height: 2.5em;
-          width: 7em;
+          height: 40px;
+          width: 100px;
           border-radius: 1em;
           border: none;
         }
@@ -137,51 +136,65 @@ $color: #ffe3b7;
 
   > footer {
     > .content {
-      margin-top: 20px;
+      margin-top: 30px;
       display: flex;
       gap: 5vw;
       justify-content: center;
       flex-wrap: wrap;
+      @media(max-width: 750px){
+        margin-top: 20px;
+      }
       > div {
         background-color: $color;
         border-radius: 20px;
         padding: 10px 30px;
-        width: 300px;
-        height: 200px;
+        width: 250px;
+        height: 180px;
         display: flex;
+        flex-direction: column;
         gap: 10px;
-        justify-content: start;
+        justify-content: center;
         align-items: center;
-        @media (max-width: 1100px) {
-          width: 30vh;
-          height: 120px;
+        @media(max-width: 1100px){
           flex-direction: column;
           justify-content: center;
           align-items: center;
+          width: 200px;
+          height: 150px;
         }
-        @media (max-width: 800px) {
-         margin: 0 100px;
+        @media(max-width:750px){
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          width: 150px;
+          height: 120px;
         }
-        @media (max-width: 600px) {
+        @media (max-width: 500px) {
           flex-direction: row;
           justify-content: start;
           align-items: center;
           height: 50px;
-          width: 300px;
+          width: 250px;
         }
 
         > p {
           font-size: 20px;
           white-space: nowrap;
           font-family: "Microsoft Yahei UI", sans-serif;
+          @media (max-width: 1100px) {
+            font-size: 2vw;
+          }
+          @media (max-width: 500px) {
+            font-size: 18px;
+          }
         }
       }
     }
   }
 
-  .icon {
-    width: 40px;
-    height: 34px;
+  .icon{
+    width: 34px;
+    height:34px;
     vertical-align: -0.15em;
     fill: currentColor;
     overflow: hidden;
@@ -190,11 +203,13 @@ $color: #ffe3b7;
   .icon-feature {
     width: 80px;
     height: 80px;
+    @media(max-width: 750px) {
+      width: 60px;
+      height:60px;
+    }
     @media(max-width: 600px) {
-      & {
         width: 40px;
         height: 34px;
-      }
     }
   }
 }
