@@ -7,6 +7,7 @@
 </template>
 <script lang="ts">
 export default {
+  name: "Switch",
   props: {
     value: Boolean,
     disabled: {
@@ -52,7 +53,7 @@ $h2: $h - 4px;
     background: #1890ff;
 
     > span {
-      left: calc(100% - #{$h2} - 2px);
+      left: 24px;
     }
   }
 
