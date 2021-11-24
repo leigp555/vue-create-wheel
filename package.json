@@ -1,11 +1,10 @@
 {
-  "name": "qmd",
-  "version": "0.0.1",
+  "name": "qmd-x",
+  "version": "0.0.6",
   "files": [
-    "dist/lib/*"
+    "dist/lib*"
   ],
   "main": "dist/lib/gulu.js",
-  "module": "dist/lib/gulu.esm.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build"
