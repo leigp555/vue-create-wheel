@@ -67,7 +67,7 @@
 </template>
 <script lang="ts">
 import {ref} from 'vue'
-import {newDate} from "../components/closeAside.ts";
+import {newDate} from "../components/closeAside";
 export default {
   setup() {
     const visible = ref<Boolean>(false)

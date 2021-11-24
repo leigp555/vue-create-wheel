@@ -32,9 +32,11 @@ export default {
         title: "成功复制",
         style:{top:"35vh",right:"10vw"}
       })
+      //@ts-ignore
       navigator.clipboard.writeText(PopUp.__sourceCode);
     }
     const html = computed(() => {
+      //@ts-ignore
       return Prism.highlight(PopUp.__sourceCode, Prism.languages.html, 'html')
     })
     return {html, visible, toggle, codeVisible}

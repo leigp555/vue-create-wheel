@@ -14,10 +14,10 @@
       </ol>
     </nav>
     <main class="gulu-homeContent">
-      <h1>Qmdv</h1>
+      <h1>Q M D</h1>
       <h4>基于vue和TS开发的一套组件</h4>
       <div class="link">
-        <a href="https://github.com/leigp555/wheel-UI.git">
+        <a href="https://github.com/leigp555/vue-create-wheel/">
           <button>GitHub</button>
         </a>
         <router-link to="/doc">
@@ -28,19 +28,19 @@
     <footer class="gulu-homeFeature">
       <div class="content">
         <div>
-          <svg class="icon-feature" >
+          <svg class="icon-feature">
             <use xlink:href="#icon-Vue"></use>
           </svg>
           <p>基于Vue3开发</p>
         </div>
         <div>
-          <svg class="icon-feature" >
+          <svg class="icon-feature">
             <use xlink:href="#icon-typescript"></use>
           </svg>
           <p>采用Typescript书写</p>
         </div>
-        <div >
-          <svg class="icon-feature" >
+        <div>
+          <svg class="icon-feature">
             <use xlink:href="#icon-easy"></use>
           </svg>
           <p>代码简单易懂</p>
@@ -75,6 +75,7 @@ $color: #ffe3b7;
 
       > li {
         font-size: 20px;
+
         > a {
           text-decoration: none;
 
@@ -107,7 +108,11 @@ $color: #ffe3b7;
     > h1 {
       font-size: 48px;
     }
-    >h4{font-size: 18px;}
+
+    > h4 {
+      font-size: 18px;
+    }
+
     > .link {
       display: flex;
       gap: 25px;
@@ -125,15 +130,15 @@ $color: #ffe3b7;
           font-size: 1.1em;
           background-color: #111111;
           white-space: nowrap;
-          padding: 10px;
           width: 100px;
-          height: 48px;
+          height: 40px;
+          line-height: 40px;
+          text-align: center;
           border-radius: 1em;
           border: none;
           @media (max-width: 500px) {
-            width:80px;
+            width: 80px;
             height: 40px;
-            padding: 10px;
             font-size: 14px;
             border-radius: 12px;
           }
@@ -149,9 +154,10 @@ $color: #ffe3b7;
       gap: 5vw;
       justify-content: center;
       flex-wrap: wrap;
-      @media(max-width: 750px){
+      @media(max-width: 750px) {
         margin-top: 20px;
       }
+
       > div {
         background-color: $color;
         border-radius: 20px;
@@ -163,14 +169,14 @@ $color: #ffe3b7;
         gap: 10px;
         justify-content: center;
         align-items: center;
-        @media(max-width: 1100px){
+        @media(max-width: 1100px) {
           flex-direction: column;
           justify-content: center;
           align-items: center;
           width: 200px;
           height: 150px;
         }
-        @media(max-width:750px){
+        @media(max-width: 750px) {
           flex-direction: column;
           justify-content: center;
           align-items: center;
@@ -180,6 +186,7 @@ $color: #ffe3b7;
         @media (max-width: 500px) {
           flex-direction: row;
           justify-content: start;
+          padding: 0 20px;
           align-items: center;
           height: 50px;
           width: 250px;
@@ -200,9 +207,9 @@ $color: #ffe3b7;
     }
   }
 
-  .icon{
+  .icon {
     width: 34px;
-    height:34px;
+    height: 34px;
     vertical-align: -0.15em;
     fill: currentColor;
     overflow: hidden;
@@ -213,11 +220,11 @@ $color: #ffe3b7;
     height: 80px;
     @media(max-width: 750px) {
       width: 60px;
-      height:60px;
+      height: 60px;
     }
     @media(max-width: 600px) {
-        width: 40px;
-        height: 34px;
+      width: 40px;
+      height: 34px;
     }
   }
 }

@@ -26,12 +26,14 @@ export default {
     const visible = ref<Boolean>(true)
     const toggle = () => {
       openPopUp({title: "成功复制",style:{top:"35vh",right:"10vw"}})
+      //@ts-ignore
       navigator.clipboard.writeText(TabsExample.__sourceCode);
     }
     const codeVisible = () => {
       visible.value = !visible.value
     }
     const html = computed(() => {
+      //@ts-ignore
       return Prism.highlight(TabsExample.__sourceCode, Prism.languages.html, 'html')
     })
     return {TabsExample, html, visible, toggle, codeVisible}

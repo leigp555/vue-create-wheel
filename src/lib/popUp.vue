@@ -5,6 +5,7 @@
 </template>
 <script lang="ts">
 export default {
+  name: "Popup",
   props: {
     title: {
       type: String,

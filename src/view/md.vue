@@ -19,6 +19,7 @@ export default {
   background-color: #fffdf1;
   padding: 20px;
   font-size: 18px;
+  >p{color: black}
   >pre{
     background-color: #f8f8f8;
     >code{

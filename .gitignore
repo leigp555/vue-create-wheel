@@ -6,3 +6,5 @@ dist-ssr
 .idea
 /dist
 /desploy.ssh
+/push.ssh
+/.idea
