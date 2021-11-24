@@ -14,11 +14,16 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" >
 .markdown-body {
   background-color: #fffdf1;
   padding: 20px;
   font-size: 18px;
-  color: black;
+  >pre{
+    background-color: #f8f8f8;
+    >code{
+      color: black;
+    }
+  }
 }
 </style>
